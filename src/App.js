@@ -1,4 +1,3 @@
-import './app.css'
 import React, { useState } from 'react'
 
 export const App = () => {
@@ -11,7 +10,7 @@ function Dog() {
     <div>
       <header>trail</header>
       <body>
-        <p>https://images.dog.ceo/breeds/wolfhound-irish/n02090721_6051.jpg</p>
+        <p>犬の写真です。</p>
         <img src={dogUrl}/>
       </body>
     </div>
