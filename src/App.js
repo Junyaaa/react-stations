@@ -1,5 +1,10 @@
-import React, { useState } from 'react'
+import * as React from 'react'
+import { useState } from 'react'
 
+/**
+ * 
+ * @type {React.FC}
+ */
 export const App = () => {
   const [dogUrl, setDogUrl] = useState(
     <img src="https://images.dog.ceo/breeds/wolfhound-irish/n02090721_6051.jpg" />
@@ -11,8 +16,7 @@ function Dog() {
     <div>
       <header>trail</header>
       <body>
-        <p>犬の写真です。</p>
-        <img src={useState}/>
+        <img src={useState} alt="犬の写真です。"/>
       </body>
     </div>
   );
