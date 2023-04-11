@@ -2,7 +2,7 @@ import './app.css'
 import React, { useState } from 'react'
 
 export const App = () => {
-  const [dogUrl, setDogUrl] = useState(<img src='https://images.dog.ceo/breeds/puggle/IMG_151824.jpg'></img>);
+  const [dogUrl, setDogUrl] = useState('https://images.dog.ceo/breeds/puggle/IMG_151824.jpg');
 }
 
 function Dog() {
