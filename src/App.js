@@ -4,9 +4,9 @@ import * as React from 'react'
 import './App.css'
 import React, { useState } from 'react';
 
-export const App = () => {
+// export const App = () => {
   // stateを定義
-  function dog(){
+  function Dog(){
     const [dogUrl, setDogUrl] = useState('https://images.dog.ceo/breeds/puggle/IMG_151824.jpg');
 
     return (
@@ -18,4 +18,4 @@ export const App = () => {
       </div>
     );
   } 
-}
+// }
