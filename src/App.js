@@ -2,28 +2,20 @@
 
 import * as React from 'react'
 import './App.css'
+import React, { useState } from 'react';
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    // stateを定義
-    this.state = {
-      dogUrl: 'https://images.dog.ceo/breeds/puggle/IMG_151824.jpg'
-    };
-}
+const App = () => {
+  // stateを定義
+  const [dogUrl, setDogUrl] = useState('https://images.dog.ceo/breeds/puggle/IMG_151824.jpg');
 
-/**
- * 
- * @type {React.FC}
- */
-render() {
   return (
     <div>
       <header>trail</header>
       <body>
-        <img src={this.state.dogUrl} alt="犬の写真です" />
+        <img src={dogUrl} alt="犬の写真です" />
       </body>
     </div>
-  )
-  }
+  );
 }
+
+export default App;
