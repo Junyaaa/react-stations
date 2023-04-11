@@ -15,7 +15,7 @@ function Dog() {
     <div>
       <header>trail</header>
       <body>
-        <img src={this.state.dogUrl} alt="犬の写真です。"/>
+        <img src={useState.dogUrl} alt="犬の写真です。"/>
       </body>
     </div>
   );
