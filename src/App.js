@@ -1,4 +1,5 @@
 import * as React from 'react'
+import './App.css'
 import { useState } from 'react'
 
 /**
@@ -13,9 +14,7 @@ function Dog() {
   return (
     <div>
       <header>trail</header>
-      <body>
-        <img src={useState} alt="犬の写真です。"/>
-      </body>
+      <img src={useState} alt="犬の写真です。"/>
     </div>
   );
 }
