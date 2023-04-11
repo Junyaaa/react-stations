@@ -1,18 +1,17 @@
+import './app.css'
+import React, { useState } from 'react'
 
-import App from './App';
-import React, { useState } from 'react';
+export const App = () => {
+  const [dogUrl, setDogUrl] = useState('https://images.dog.ceo/breeds/puggle/IMG_151824.jpg');
+}
 
 function Dog() {
-  const [dogUrl, setDogUrl] = useState('https://images.dog.ceo/breeds/puggle/IMG_151824.jpg');
-
   return (
     <div>
       <header>trail</header>
       <body>
-        <img src={dogUrl} alt="犬の写真です" />
+        <img src={dogUrl} alt="犬の写真です"></img>
       </body>
     </div>
   );
 }
-
-export default App;
