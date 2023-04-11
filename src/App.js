@@ -1,3 +1,5 @@
+
+import App from './App';
 import React, { useState } from 'react';
 
 function Dog() {
@@ -12,3 +14,5 @@ function Dog() {
     </div>
   );
 }
+
+export default App;
