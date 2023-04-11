@@ -7,7 +7,9 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     // stateを定義
-    this.state = {dogUrl: 'https://images.dog.ceo/breeds/puggle/IMG_151824.jpg'}
+    this.state = {
+      dogUrl: 'https://images.dog.ceo/breeds/puggle/IMG_151824.jpg'
+    };
 }
 
 /**
@@ -20,7 +22,6 @@ render() {
       <header>trail</header>
       <body>
         <img src={this.state.dogUrl} alt="犬の写真です" />
-
       </body>
     </div>
   )
