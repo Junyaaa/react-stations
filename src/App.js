@@ -10,7 +10,7 @@ function Dog() {
     <div>
       <header>trail</header>
       <body>
-        <img src={dogUrl} alt="犬の写真です"></img>
+        <img src={dogUrl} alt="犬の写真です" />
       </body>
     </div>
   );
