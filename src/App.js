@@ -9,8 +9,15 @@ import { useState } from 'react'
 export const App = () => {
   const [dogUrl, setDogUrl] = useState("https://images.dog.ceo/breeds/wolfhound-irish/n02090721_6051.jpg");
 
+  const handleClick = () => {
+    setDogUrl("https://images.dog.ceo/breeds/terrier-dandie/n02096437_148.jpg");
+  }
+
   return (
-    <Dog dogUrl={dogUrl} />
+    <div>
+      <Dog dogUrl={dogUrl} />
+      <button onClick={handleClick}>変更</button>
+    </div>
   );
 }
 
