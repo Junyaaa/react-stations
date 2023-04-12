@@ -29,7 +29,7 @@ function Dog(props) {
 
   return (
     <div>
-      <header>trail</header>
+      <header class="title">trail</header>
       <img src={dogUrl} alt="犬の写真です。" />
     </div>
   );
