@@ -1,10 +1,11 @@
 // DO NOT DELETE
-import React from 'react';
+import React from 'react'
+import './App.css'
 
-const DogImage = ({ url }) => {
+const DogImage = ({ props}) => {
   return (
-    <img src={url} alt="犬の写真です。" />
+    <img src={props.url} alt="犬の写真です。" />
   );
 }
 
-export default DogImage;
+export default { DogImage };

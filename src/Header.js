@@ -1,7 +1,8 @@
 // DO NOT DELETE
 import React from 'react';
+import './App.css';
 
-const Header = () => {
+const Header = props => {
   return (
     <header>
       <h1>Dog Pictures</h1>
@@ -9,4 +10,4 @@ const Header = () => {
   );
 }
 
-export default Header;
+export { Header };
