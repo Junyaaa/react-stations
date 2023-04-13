@@ -28,4 +28,4 @@ return (
 );
 }
 
-export default Description;
+export { Description };

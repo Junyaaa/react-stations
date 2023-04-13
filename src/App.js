@@ -7,9 +7,9 @@ const App = () => {
 return (
 <div className="App">
 <Header title="Dog Pictures"/>
-<Description />
+<Description Description="画像を説明する文です。"/>
 </div>
 );
 }
 
-export default App;
+export { App }
