@@ -8,4 +8,4 @@ const DogImage = ({ props}) => {
   );
 }
 
-export default { DogImage };
+export { DogImage };
