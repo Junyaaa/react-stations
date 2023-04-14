@@ -1,54 +1,49 @@
-import React, { useState, useEffect } from 'react';
-import { DogImage } from './DogImage';
+import React from 'react';
+import { useState, useEffect } from 'react';
+import './App.css';
+import BreedSelect from './BreedsSelect';
 
-const DogListContainer = () => {
+function DogListContainer() {
   const [breeds, setBreeds] = useState([]);
-  const [selectedBreed, setSelectedBreed] = useState("");
-  const [selectedBreedImages, setSelectedBreedImages] = useState([]);
+  const [selectedBreed, setSelectedBreed] = useState('');
+  const [dogImages, setDogImages] = useState([]);
 
   useEffect(() => {
-    fetch("https://dog.ceo/api/breeds/list/all")
-      .then(res => res.json())
-      .then(data => {
-        const breedsList = Object.keys(data.message);
-        setBreeds(breedsList);
-      })
-      .catch(err => console.log(err));
+    const fetchBreeds = async () => {
+      const response = await fetch('https://dog.ceo/api/breeds/list/all');
+      const data = await response.json();
+      setBreeds(Object.keys(data.message));
+    };
+    fetchBreeds();
   }, []);
 
   useEffect(() => {
-    if(selectedBreed !== "") {
-      fetch(`https://dog.ceo/api/breed/${selectedBreed}/images/random/10`)
-        .then(res => res.json())
-        .then(data => {
-          setSelectedBreedImages(data.message);
-        })
-        .catch(err => console.log(err));
-    } else {
-      setSelectedBreedImages([]);
-    }
+    const fetchDogImages = async () => {
+      if (selectedBreed !== '') {
+        const response = await fetch(`https://dog.ceo/api/breed/${selectedBreed}/images`);
+        const data = await response.json();
+        setDogImages(data.message);
+      }
+    };
+    fetchDogImages();
   }, [selectedBreed]);
 
-  const handleBreedChange = (event) => {
-    setSelectedBreed(event.target.value);
-  }
-
   return (
-    <div>
-      <label htmlFor="breeds">Select a breed:</label>
-      <select id="breeds" value={selectedBreed} onChange={handleBreedChange}>
-        <option value="">--Please choose a breed--</option>
-        {breeds.map(breed => (
-          <option key={breed} value={breed}>{breed}</option>
-        ))}
-      </select>
-      <div>
-        {selectedBreedImages.map((url, index) => (
-          <DogImage key={index} url={url} />
-        ))}
-      </div>
+    <div className="App">
+      <h1>Dog Breed Images</h1>
+      <BreedSelect breeds={breeds} selectedBreed={selectedBreed} setSelectedBreed={setSelectedBreed} />
+      {selectedBreed !== '' ? (
+        <div className="dog-image-list">
+          {dogImages.map((image, index) => (
+            <img key={index} src={image} alt={`Dog ${index}`} />
+          ))}
+        </div>
+      ):
+      (
+        <p>Please select a breed to display images.</p>
+      )}
     </div>
   );
-};
+}
 
-export { DogListContainer };
+export default DogListContainer;
