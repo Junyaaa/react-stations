@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import {Header} from './Header';
 import {Description} from './Description';
-import DogListContainer from './DogListContainer';
+import {DogListContainer} from './DogListContainer';
 
 const App = () => {
 return (

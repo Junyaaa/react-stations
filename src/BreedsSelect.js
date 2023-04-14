@@ -1,16 +1,15 @@
 import React from 'react';
 
-function BreedsSelect({ breeds, selectedBreed, handleBreedChange }) {
-return (
-<select value={selectedBreed} onChange={handleBreedChange}>
-<option value=''>Select a breed</option>
-{breeds.map((breed) => (
-<option key={breed} value={breed}>
-{breed}
-</option>
-))}
-</select>
-);
+export const BreedsSelect = (props) => {
+  const breeds = props.breeds;
+  const selectList = breeds.map((breed) => {
+    return (
+      <option key={breed} value={breed}>{breeds}</option>
+    )
+  });
+  return (
+    <select value={props.value} onChange={props.change}>
+      {selectList}
+    </select>
+  )
 }
-
-export default BreedsSelect;
